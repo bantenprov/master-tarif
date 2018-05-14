@@ -1,5 +1,5 @@
 <?php
 
-Route::group(['prefix' => 'master-tarif'], function() {
-    Route::get('demo', 'Bantenprov\MasterTarif\Http\Controllers\MasterTarifController@demo');
+Route::group(['prefix' => '/','middleware' => ['web']], function() {
+    Route::resource('master-tarif', 'Bantenprov\MasterTarif\Http\Controllers\MasterTarifController');
 });

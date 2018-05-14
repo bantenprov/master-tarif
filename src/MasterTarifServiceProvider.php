@@ -90,7 +90,7 @@ class MasterTarifServiceProvider extends ServiceProvider
 
         $this->publishes([
             $packageConfigPath => $appConfigPath,
-        ], 'config');
+        ], 'master-tarif-config');
     }
 
     /**
@@ -106,7 +106,7 @@ class MasterTarifServiceProvider extends ServiceProvider
 
         $this->publishes([
             $packageTranslationsPath => resource_path('lang/vendor/master-tarif'),
-        ], 'lang');
+        ], 'master-tarif-lang');
     }
 
     /**
@@ -122,7 +122,7 @@ class MasterTarifServiceProvider extends ServiceProvider
 
         $this->publishes([
             $packageViewsPath => resource_path('views/vendor/master-tarif'),
-        ], 'views');
+        ], 'master-tarif-views');
     }
 
     /**
@@ -136,7 +136,7 @@ class MasterTarifServiceProvider extends ServiceProvider
 
         $this->publishes([
             $packageAssetsPath => public_path('vendor/master-tarif'),
-        ], 'public');
+        ], 'master-tarif-public');
     }
 
     /**
@@ -152,6 +152,6 @@ class MasterTarifServiceProvider extends ServiceProvider
 
         $this->publishes([
             $packageMigrationsPath => database_path('migrations')
-        ], 'migrations');
+        ], 'master-tarif-migrations');
     }
 }

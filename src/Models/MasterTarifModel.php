@@ -1,33 +1,47 @@
-<?php namespace Bantenprov\MasterTarif\Models;
+<?php
+
+namespace Bantenprov\MasterTarif\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Kalnoy\Nestedset\NodeTrait;
 
-/**
- * The MasterTarifModel class.
- *
- * @package Bantenprov\MasterTarif
- * @author  bantenprov <developer.bantenprov@gmail.com>
- */
-class MasterTarifModel extends Model
+class MasterTarifModel extends Model 
 {
-    /**
-    * Table name.
-    *
-    * @var string
-    */
-    protected $table = 'master_tarif';
+    use NodeTrait;
 
-    /**
-    * The attributes that are mass assignable.
-    *
-    * @var mixed
-    */
-    protected $fillable = [];
+    protected $table = 'master_tarifs';
+    public $timestamps = true;
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [];
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
+
+    protected $fillable = array(
+        'id',
+        'uuid',
+        'nama',
+        'dasar_hukum',
+        'status',
+        'daftar_retribusi_id',
+        'daftar_retribusi_uuid',
+        'user_id',
+        'user_update',
+    );
+
+    public function getDaftarRetribusi()
+    {
+        return $this->belongsTo('Bantenprov\DaftarRetribusi\Models\DaftarRetribusiModel', 'daftar_retribusi_id');
+    }
+
+    public function getUserCreated()
+    {
+        return $this->belongsTo('App\User','user_id');
+    }
+
+    public function getUserUpdated()
+    {
+        return $this->belongsTo('App\User','user_update');
+    }
+
 }
