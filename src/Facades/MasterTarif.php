@@ -1,11 +1,11 @@
-<?php namespace Bantenporv\MasterTarif\Facades;
+<?php namespace Bantenprov\MasterTarif\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * The MasterTarif facade.
  *
- * @package Bantenporv\MasterTarif
+ * @package Bantenprov\MasterTarif
  * @author  bantenprov <developer.bantenprov@gmail.com>
  */
 class MasterTarif extends Facade
