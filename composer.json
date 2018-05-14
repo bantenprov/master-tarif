@@ -32,7 +32,7 @@
                 "Bantenprov\\MasterTarif\\MasterTarifServiceProvider"
             ],
             "aliases": {                
-                "MasterTarif": "Bantenporv\\MasterTarif\\Facades\\MasterTarif"
+                "MasterTarif": "Bantenprov\\MasterTarif\\Facades\\MasterTarif"
             }
         }
     }

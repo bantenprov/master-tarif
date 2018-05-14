@@ -1,11 +1,11 @@
-<?php namespace Bantenporv\MasterTarif\Models;
+<?php namespace Bantenprov\MasterTarif\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * The MasterTarifModel class.
  *
- * @package Bantenporv\MasterTarif
+ * @package Bantenprov\MasterTarif
  * @author  bantenprov <developer.bantenprov@gmail.com>
  */
 class MasterTarifModel extends Model

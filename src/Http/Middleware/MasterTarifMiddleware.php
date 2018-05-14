@@ -1,11 +1,11 @@
-<?php namespace Bantenporv\MasterTarif\Http\Middleware;
+<?php namespace Bantenprov\MasterTarif\Http\Middleware;
 
 use Closure;
 
 /**
  * The MasterTarifMiddleware class.
  *
- * @package Bantenporv\MasterTarif
+ * @package Bantenprov\MasterTarif
  * @author  bantenprov <developer.bantenprov@gmail.com>
  */
 class MasterTarifMiddleware

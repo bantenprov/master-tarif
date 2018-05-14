@@ -8,13 +8,13 @@ return [
     |--------------------------------------------------------------------------
     |
     | The following language lines are used for development of package
-    | Bantenporv/MasterTarif
+    | Bantenprov/MasterTarif
     |
     */
 
     'author'         => 'bantenprov',
     'email'          => 'developer.bantenprov@gmail.com',
-    'package_vendor' => 'Bantenporv',
+    'package_vendor' => 'Bantenprov',
     'package_name'   => 'MasterTarif'
 
 ];

@@ -1,11 +1,11 @@
-<?php namespace Bantenporv\MasterTarif\Console\Commands;
+<?php namespace Bantenprov\MasterTarif\Console\Commands;
 
 use Illuminate\Console\Command;
 
 /**
  * The MasterTarifCommand class.
  *
- * @package Bantenporv\MasterTarif
+ * @package Bantenprov\MasterTarif
  * @author  bantenprov <developer.bantenprov@gmail.com>
  */
 class MasterTarifCommand extends Command
@@ -16,14 +16,14 @@ class MasterTarifCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'bantenporv:master-tarif';
+    protected $signature = 'bantenprov:master-tarif';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Demo command for Bantenporv\MasterTarif package';
+    protected $description = 'Demo command for Bantenprov\MasterTarif package';
 
     /**
      * Create a new command instance.
@@ -42,6 +42,6 @@ class MasterTarifCommand extends Command
      */
     public function handle()
     {
-        $this->info('Welcome to command for Bantenporv\MasterTarif package');
+        $this->info('Welcome to command for Bantenprov\MasterTarif package');
     }
 }

@@ -1,14 +1,14 @@
-<?php namespace Bantenporv\MasterTarif\Http\Controllers;
+<?php namespace Bantenprov\MasterTarif\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Bantenporv\MasterTarif\Facades\MasterTarif;
-use Bantenporv\MasterTarif\Models\MasterTarifModel;
+use Bantenprov\MasterTarif\Facades\MasterTarif;
+use Bantenprov\MasterTarif\Models\MasterTarifModel;
 
 /**
  * The MasterTarifController class.
  *
- * @package Bantenporv\MasterTarif
+ * @package Bantenprov\MasterTarif
  * @author  bantenprov <developer.bantenprov@gmail.com>
  */
 class MasterTarifController extends Controller

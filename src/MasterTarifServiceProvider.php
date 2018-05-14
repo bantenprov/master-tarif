@@ -1,12 +1,12 @@
-<?php namespace Bantenporv\MasterTarif;
+<?php namespace Bantenprov\MasterTarif;
 
 use Illuminate\Support\ServiceProvider;
-use Bantenporv\MasterTarif\Console\Commands\MasterTarifCommand;
+use Bantenprov\MasterTarif\Console\Commands\MasterTarifCommand;
 
 /**
  * The MasterTarifServiceProvider class
  *
- * @package Bantenporv\MasterTarif
+ * @package Bantenprov\MasterTarif
  * @author  bantenprov <developer.bantenprov@gmail.com>
  */
 class MasterTarifServiceProvider extends ServiceProvider
