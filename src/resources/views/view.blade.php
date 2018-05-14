@@ -1,0 +1,1 @@
+This is demo view file for Bantenporv\MasterTarif package using blade template
