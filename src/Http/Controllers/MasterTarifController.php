@@ -108,7 +108,7 @@ class MasterTarifController extends Controller
             'status'                => $request->status,            
             'level'                 => $master_tarif_parent->level + 1,
             'daftar_retribusi_id'   => $master_tarif_parent->daftar_retribusi_id,
-            'daftar_retribusi_uuid' => $master_tarif_parent->uuid,
+            'daftar_retribusi_uuid' => $master_tarif_parent->daftar_retribusi_uuid,
             'user_id'               => \Auth::user()->id,
             'user_update'           => \Auth::user()->id,
         ]);
