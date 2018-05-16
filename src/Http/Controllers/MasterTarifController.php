@@ -38,6 +38,17 @@ class MasterTarifController extends Controller
 
     /**
      * @param Request $request
+     * @return mixed
+     */
+    public function createChild(Request $request, $parent_id)
+    {
+        $master_tarif_parent = MasterTarifModel::find($parent_id);
+
+        return view('master-tarif::create-child', compact('master_tarif_parent'));
+    }
+
+    /**
+     * @param Request $request
      */
     public function store(Request $request)
     {
@@ -47,13 +58,45 @@ class MasterTarifController extends Controller
         $request->validate([            
             'nama'                  => 'required',
             'dasar_hukum'           => 'required',
-            'status'                => 'required',
             'daftar_retribusi_id'   => 'required',
         ]);
 
         if(is_null($daftar_retribusi)){
             return redirect()->back()->withErrors('Error : retribusi yang dipilih tidak ditemukan');
         }
+
+        // if($request->status > 1 && $request->status < 0){
+        //     return redirect()->back()->withErrors('Error : status salah');
+        // }
+
+        MasterTarifModel::create([
+            'uuid'                  => Uuid::uuid5(Uuid::NAMESPACE_DNS, 'bantenprov.go.id'.date('YmdHis')),
+            'nama'                  => $request->nama,
+            'dasar_hukum'           => $request->dasar_hukum,
+            'level'                 => 1,
+            'daftar_retribusi_id'   => $request->daftar_retribusi_id,
+            'daftar_retribusi_uuid' => $daftar_retribusi->uuid,
+            'user_id'               => \Auth::user()->id,
+            'user_update'           => \Auth::user()->id,
+        ]);
+
+        $request->session()->flash('message', 'Successfully add new data');
+
+        return redirect()->route('master-tarif.index');
+
+    }
+
+    /**
+     * @param Request $request
+     */
+    public function storeChild(Request $request, $parent_id)
+    {
+        $master_tarif_parent = MasterTarifModel::find($parent_id);        
+
+        $request->validate([            
+            'nama'                  => 'required',
+            'status'                => 'required',
+        ]);
 
         if($request->status > 1 && $request->status < 0){
             return redirect()->back()->withErrors('Error : status salah');
@@ -62,10 +105,10 @@ class MasterTarifController extends Controller
         MasterTarifModel::create([
             'uuid'                  => Uuid::uuid5(Uuid::NAMESPACE_DNS, 'bantenprov.go.id'.date('YmdHis')),
             'nama'                  => $request->nama,
-            'dasar_hukum'           => $request->dasar_hukum,
-            'status'                => $request->status,
-            'daftar_retribusi_id'   => $request->daftar_retribusi_id,
-            'daftar_retribusi_uuid' => $daftar_retribusi->uuid,
+            'status'                => $request->status,            
+            'level'                 => $master_tarif_parent->level + 1,
+            'daftar_retribusi_id'   => $master_tarif_parent->daftar_retribusi_id,
+            'daftar_retribusi_uuid' => $master_tarif_parent->uuid,
             'user_id'               => \Auth::user()->id,
             'user_update'           => \Auth::user()->id,
         ]);

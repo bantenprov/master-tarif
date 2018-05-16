@@ -23,6 +23,7 @@ class MasterTarifModel extends Model
         'nama',
         'dasar_hukum',
         'status',
+        'level',
         'daftar_retribusi_id',
         'daftar_retribusi_uuid',
         'user_id',
