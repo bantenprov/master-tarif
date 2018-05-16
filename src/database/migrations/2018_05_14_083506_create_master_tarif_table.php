@@ -14,12 +14,14 @@ class CreateMasterTarifTable extends Migration
      */
     public function up()
     {
+        // Schema::dropIfExist('master_tarifs');
         Schema::create('master_tarifs', function(Blueprint $table) {
 			$table->increments('id');
 			$table->uuid('uuid', 191)->unique();
 			$table->string('nama', 191)->unique();
-			$table->string('dasar_hukum', 191)->unique();
-			$table->boolean('status')->index();
+			$table->string('dasar_hukum', 191)->nullable();
+            $table->boolean('status')->nullable()->index();
+            $table->integer('level')->index();
 			$table->integer('daftar_retribusi_id')->unsigned()->nullable()->index();
 			$table->uuid('daftar_retribusi_uuid', 191)->index();
 			$table->integer('user_id')->unsigned()->index();

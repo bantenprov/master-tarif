@@ -34,14 +34,6 @@
                   <label for="dasar_hukum">Dasar Hukum</label>
                   <input type="text" class="form-control" id="masterTarifDasarHukum"  name="dasar_hukum">
                 </div>
-
-                <div class="form-group">
-                  <label for="status">Status</label>
-                  <select id="status" name="status" class="form-control form-control">
-                    <option value="1">Aktif</option> 
-                    <option value="0">Tidak Aktif</option>                              
-                  </select>
-                </div>
                 
                 <div class="form-group">
                   <label for="daftar_retribusi_id">Retribusi</label>
